@@ -9,7 +9,7 @@ height: 100%;
 position: absolute;
 top: 0;
 left: 0;
-background-color: #000000a7;
+background-color: #010211a7;
 display: flex;
 align-items: top;
 justify-content: center;
@@ -23,7 +23,8 @@ width: 100%;
 border-radius: 16px;
 margin: 50px 12px;
 height: min-content;
-background-color: ${({ theme }) => theme.card};
+border: 2px solid ${({ theme }) => theme.white + 20};
+background-color: rgba(0,3,25);
 color: ${({ theme }) => theme.text_primary};
 padding: 20px;
 display: flex;
@@ -32,14 +33,14 @@ position: relative;
 `;
 
 const Title = styled.div`
-  font-size: 28px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};
-  margin: 8px 6px 0px 6px;
-  @media only screen and (max-width: 600px) {
-      font-size: 24px;
-      margin: 6px 6px 0px 6px;
-  }
+font-size: 28px;
+font-weight: 600;
+color: ${({ theme }) => theme.text_primary};
+margin: 8px 6px 0px 6px;
+@media only screen and (max-width: 600px) {
+    font-size: 24px;
+    margin: 6px 6px 0px 6px;
+}
 `;
 
 const Date = styled.div`
@@ -57,7 +58,7 @@ const Date = styled.div`
 const Desc = styled.div`
     font-size: 16px;
     line-height: 1.7;
-    font-weight: 400;
+    font-weight: 100;
     color: ${({ theme }) => theme.text_primary};
     margin: 8px 6px;
     @media only screen and (max-width: 600px) {
@@ -163,19 +164,19 @@ const Button = styled.a`
     color: ${({ theme }) => theme.text_primary};
     padding: 12px 16px;
     border-radius: 8px;
-    background-color: ${({ theme }) => theme.primary};
+    background-color: ${({ theme }) => theme.button};
     ${({ dull, theme }) => dull && `
-        background-color: ${theme.bgLight};
+        background-color: ${theme.bg};
+        border: 1px solid ${theme.text_secondary};
         color: ${theme.text_secondary};
-        &:hover {
-            background-color: ${({ theme }) => theme.bg + 99};
-        }
     `}
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease-in-out !important;
     &:hover {
-        background-color: ${({ theme }) => theme.primary + 99};
+        transform: scale(1.03);
+        transition: all 0.4s ease-in-out;
+        filter: brightness(1);
     }
     @media only screen and (max-width: 600px) {
         font-size: 12px;
@@ -227,8 +228,8 @@ const index = ({ openModal, setOpenModal }) => {
                         </>
                     )}
                     <ButtonGroup>
-                        <Button dull href={project?.github} target='new'>View Code</Button>
-                        <Button href={project?.webapp} target='new'>View Live App</Button>
+                        <Button dull href={project?.github} target='new'>GitHub Repository</Button>
+                        <Button href={project?.webapp} target='new'>Live App</Button>
                     </ButtonGroup>
                 </Wrapper>
             </Container>

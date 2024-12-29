@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroContainer, HeroLeftContainer, Img, HeroRightContainer, HeroInnerContainer, TextLoop, Title, Span, SubTitle, ResumeButton, SocialMediaIcon, SocialMediaIcons } from './HeroStyle'
+import { HeroContainer, HeroLeftContainer, Img, HeroRightContainer, HeroInnerContainer, TextLoop, Title, Span, SubTitle, ResumeButton, SocialMediaIcon, SocialMediaIcons, PreTitle } from './HeroStyle'
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaBehance, FaDribbble } from 'react-icons/fa';
 import HeroImg from '../../images/Profile.jpg'
 import Typewriter from 'typewriter-effect';
@@ -11,9 +11,9 @@ const HeroSection = () => {
             <HeroContainer>
                 <HeroInnerContainer >
                     <HeroLeftContainer id="Left">
-                        <Title>Hello! I am <br /> {Bio.name}</Title>
+                        <PreTitle>WELCOME TO MY PORTFOLIO.</PreTitle>
+                        <Title>{Bio.name}</Title>
                         <TextLoop>
-                            I am a
                             <Span>
                                 <Typewriter
                                     options={{

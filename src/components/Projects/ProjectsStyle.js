@@ -102,3 +102,29 @@ export const CardContainer = styled.div`
     //     grid-template-columns: repeat(1, 1fr);
     // }
 `;
+
+export const ShowMoreButton = styled.button`
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid ${({ theme }) => theme.white + 20};
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out !important;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.4s ease-in-out;
+    filter: brightness(1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: #00408d;
+  }
+`;

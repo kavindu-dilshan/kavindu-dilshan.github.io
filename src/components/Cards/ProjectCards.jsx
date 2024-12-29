@@ -18,10 +18,10 @@ const Button = styled.button`
 const Card = styled.div`
     width: 330px;
     height: 490px;
-    background-color: ${({ theme }) => theme.card};
+    background-color: rgba(1,2,17);
     cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
+    border-radius: 25px;
+    border: 2px solid ${({ theme }) => theme.white + 20};
     overflow: hidden;
     padding: 26px 20px;
     display: flex;
@@ -30,7 +30,7 @@ const Card = styled.div`
     transition: all 0.5s ease-in-out;
     &:hover {
         transform: translateY(-10px);
-        box-shadow: 0 0 50px 4px rgba(0,0,0,0.6);
+        box-shadow: 0 0 50px 4px rgba(23, 92, 230, 0.15);
         filter: brightness(1.1);
     }
     &:hover ${Button} {
@@ -59,7 +59,7 @@ const Tag = styled.span`
     font-size: 12px;
     font-weight: 400;
     color: ${({ theme }) => theme.primary};
-    background-color: ${({ theme }) => theme.primary + 15};
+    background-color: ${({ theme }) => theme.primary + 30};
     padding: 2px 8px;
     border-radius: 10px;
 `
@@ -106,6 +106,9 @@ const Description = styled.div`
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+    @media only screen and (max-width: 768px){
+        font-size: 14px;
+    }
 `
 
 const Members = styled.div`

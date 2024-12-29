@@ -5,7 +5,7 @@ Welcome to my portfolio! This portfolio shows my skills, projects, and experienc
 
 ### Live App: [kavindu-dilshan.github.io](https://kavindu-dilshan.github.io)<br><br>
 
-<img src="https://firebasestorage.googleapis.com/v0/b/images-for-projects.appspot.com/o/Portfolio%2FHome.jpg?alt=media&token=281134b8-fc9a-41ee-8458-f79ece27b3d7" alt="Home">
+<img src="https://firebasestorage.googleapis.com/v0/b/images-for-projects.appspot.com/o/Portfolio%2FHome.jpg?alt=media&token=e35f6f39-1d89-4d15-a1d7-40056e77e622" alt="Home">
 
 ## Table of Contents
 - [Introduction](#introduction)

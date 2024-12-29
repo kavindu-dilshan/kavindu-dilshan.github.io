@@ -2,7 +2,7 @@ import { Link as LinkR } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Nav = styled.div`
-    background-color: ${({theme}) => theme.card_light};
+    background-color: ${({ theme }) => theme.bg};
     height: 80px;
     display: flex;
     align-items: center;
@@ -132,7 +132,7 @@ export const MobileMenu = styled.div`
     right: 0;
     width: 100%;
     padding: 12px 40px 24px 40px;
-    background: rgba(25, 25, 36, ${({ isOpen }) => (isOpen ? '0.98' : '0')});
+    background: rgba(0, 3, 25, ${({ isOpen }) => (isOpen ? '0.98' : '0')});
     transition: all 0.6s ease-in-out;
     transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-100%)')};
     border-radius: 0 0 20px 20px;

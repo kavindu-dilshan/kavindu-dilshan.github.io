@@ -16,11 +16,13 @@ const Document = styled.img`
 const Description = styled.div`
     width: 100%;
     font-size: 15px;
+    line-height: 24px;
     font-weight: 400;
     color: ${({ theme }) => theme.text_primary + 99};
     margin-bottom: 10px;
     @media only screen and (max-width: 768px){
         font-size: 12px;
+        line-height: 20px;
     }
 `
 
@@ -39,6 +41,7 @@ const Card = styled.div`
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
     padding: 12px 16px;
     justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -64,7 +67,7 @@ const Card = styled.div`
         -webkit-line-clamp: unset;
 
     }
-    border: 0.1px solid #854CE6;
+    border: 0.1px solid ${({ theme }) => theme.primary};
 `
 
 const Top = styled.div`

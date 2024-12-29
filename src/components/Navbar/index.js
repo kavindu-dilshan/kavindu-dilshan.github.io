@@ -18,7 +18,7 @@ const Navbar = () => {
       <NavbarContainer>
         <NavLogo to='/'>
           <div style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }} onClick={scrollToTop}>
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
+            <DiCssdeck size="3rem" /> <Span>Kavindu Dilshan</Span>
           </div>
         </NavLogo>
         <MobileIcon>

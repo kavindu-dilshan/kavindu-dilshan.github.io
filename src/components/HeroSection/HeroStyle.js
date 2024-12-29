@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const HeroContainer = styled.div`
-  background: ${({ theme }) => theme.card_light};
+  background: ${({ theme }) => theme.bg};
   display: flex;
   justify-content: center;
   position: relative;
-  padding: 80px 30px;
+  padding: 90px 30px;
   @media (max-width: 960px) {
     padding: 66px 16px;
   }
@@ -115,15 +115,13 @@ export const Title = styled.div`
   font-weight: 700;
   font-size: 50px;
   color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
   @media (max-width: 960px) {
     text-align: center;
   }
 
   @media (max-width: 640px) {
-    font-size: 40px;
-    line-height: 48px;
-    margin-bottom: 8px;
+    font-size: 34px;
+    line-height: 40px;
   }
 `;
 
@@ -133,13 +131,31 @@ export const TextLoop = styled.div`
   display: flex;
   gap: 12px;
   color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
+  line-height: 48px;
+  margin-bottom: 20px;
   @media (max-width: 960px) {
     text-align: center;
   }
   @media (max-width: 640px) {
     font-size: 22px;
     line-height: 48px;
+    margin-bottom: 16px;
+  }
+`;
+
+export const PreTitle = styled.div`
+  font-weight: 200;
+  font-size: 18px;
+  display: flex;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  gap: 12px;
+  color: ${({ theme }) => theme.text_primary};
+  @media (max-width: 960px) {
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    font-size: 14px;
     margin-bottom: 16px;
   }
 `;
@@ -151,7 +167,7 @@ export const Span = styled.span`
 export const SubTitle = styled.div`
   font-size: 20px;
   line-height: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: ${({ theme }) => theme.text_primary + 95};
 
   @media (max-width: 960px) {
@@ -173,31 +189,28 @@ export const ResumeButton = styled.a`
     max-width: 250px;
     text-align: center;
     padding: 16px 0;
-    color:${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.white};
     border-radius: 100px;
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
     transition: all 0.2s ease-in-out !important;
-    background: hsla(271, 100%, 50%, 1);
-    background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    box-shadow:  20px 20px 60px #1F2634,
-    -20px -20px 60px #1F2634;
+    background: #4285F4;
+    background: linear-gradient(225deg, #083c91, #4285F4);
+    box-shadow:  20px 20px 60px #1F2634, -20px -20px 60px #1F2634;
     &:hover {
         transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
-    filter: brightness(1);
+        transition: all 0.4s ease-in-out;
+        box-shadow: 20px 20px 60px #1F2634, -20px -20px 60px #1F2634;
+        filter: brightness(1);
     }    
     
     @media (max-width: 640px) {
         padding: 12px 0;
         font-size: 18px;
     } 
-
 `;
+
 
 export const SocialMediaIcons = styled.div`
   display: flex;

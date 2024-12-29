@@ -60,9 +60,9 @@ const SkillsContainer = styled.div`
 
 const Skill = styled.div`
   width: 100%;
-  max-width: 500px;
-  background: ${({ theme }) => theme.card};
-  border: 0.1px solid #854CE6;
+  max-width: 530px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.1px solid ${({ theme }) => theme.primary};
   box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   border-radius: 16px;
   padding: 18px 36px;
@@ -126,7 +126,7 @@ const Skills = () => {
     <Container id="skills">
       <Wrapper>
         <Title>Skills</Title>
-        <Desc>Here are some of my skills over the last year.</Desc>
+        <Desc>Here are some of my skills over the last few years.</Desc>
         <SkillsContainer>
           {skills.map((skill) => (
             <Skill>

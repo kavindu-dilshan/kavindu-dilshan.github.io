@@ -80,16 +80,16 @@ const index = () => {
             <Wrapper>
                 <Title>Experience</Title>
                 <Desc>
-                    My work experience at different companies and projects.
+                    I have gained valuable experience working at multiple organizations.
                 </Desc>
                 <TimelineSection>
                     <Timeline>
                         {experiences.map((experience,index) => (
                             <TimelineItem>
                                 <TimelineSeparator>
-                                    <TimelineDot variant="outlined" color="secondary" />
-                                    {index !== experiences.length && <TimelineConnector style={{ background: '#854CE6' }} />}
-                                    <TimelineDot variant="outlined" color="secondary" />
+                                    <TimelineDot variant="outlined" sx={{ borderColor: '#B1B2B3' }} />
+                                    {index !== experiences.length && <TimelineConnector style={{ background: '#4285F4' }} />}
+                                    <TimelineDot variant="outlined" sx={{ borderColor: '#B1B2B3' }} />
                                 </TimelineSeparator>
                                 <TimelineContent sx={{ py: '12px', px: 2 }}>
                                     <ExperienceCard experience={experience}/>

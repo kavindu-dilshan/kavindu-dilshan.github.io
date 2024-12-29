@@ -16,11 +16,13 @@ const Document = styled.img`
 const Description = styled.div`
     width: 100%;
     font-size: 15px;
+    line-height: 24px;
     font-weight: 400;
     color: ${({ theme }) => theme.text_primary + 99};
     margin-bottom: 10px;
     @media only screen and (max-width: 768px){
         font-size: 12px;
+        line-height: 20px;
     }
 `
 
@@ -41,6 +43,7 @@ const Card = styled.div`
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
     gap: 12px;

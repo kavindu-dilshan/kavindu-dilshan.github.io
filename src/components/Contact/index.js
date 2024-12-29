@@ -61,10 +61,11 @@ const ContactForm = styled.form`
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.card};
+  background: ${({ theme }) => theme.bg};
+  border: 2px solid ${({ theme }) => theme.white + 20};
   padding: 32px;
   border-radius: 16px;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  box-shadow: rgba(23, 92, 230, 0.1) 0px 0px 72px;
   margin-top: 28px;
   gap: 12px;
 `;
@@ -80,7 +81,7 @@ const ContactTitle = styled.div`
 const ContactInput = styled.input`
   flex: 1;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
+  border: 1px solid ${({ theme }) => theme.white + 60};
   outline: none;
   font-size: 18px;
   color: ${({ theme }) => theme.text_primary};
@@ -99,7 +100,7 @@ const ContactInputMessage = styled.textarea`
   flex: 1;
   max-width: 100%;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
+  border: 1px solid ${({ theme }) => theme.white + 60};
   outline: none;
   font-size: 18px;
   color: ${({ theme }) => theme.text_primary};
@@ -126,23 +127,19 @@ const ContactButton = styled.input`
   color: ${({ theme }) => theme.text_primary};
   font-size: 18px;
   font-weight: 600;
-  background: linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-
+  background: #4285F4;
+  background: linear-gradient(225deg, #083c91, #4285F4);
+  transition: all 0.2s ease-in-out !important;
+  
   @media (max-width: 768px) {
     width: 50%;
   }
 
   &:hover {
+    transform: scale(1.05);
+    transition: all 0.4s ease-in-out;
+    filter: brightness(1);
     cursor: pointer;
-    background: linear-gradient(
-      225deg,
-      hsla(271, 100%, 40%, 1) 0%,
-      hsla(294, 100%, 40%, 1) 100%
-    );
   }
 `;
 
@@ -168,8 +165,8 @@ const Contact = () => {
         <Desc>Feel free to contact me for work inquiries or collaborations!</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit} autoComplete="off">
           <ContactTitle>Send me an email.</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required/>
-          <ContactInput placeholder="Your Name" name="from_name" required/>
+          <ContactInput placeholder="Name" name="from_name" required/>
+          <ContactInput placeholder="Email" name="from_email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required/>
           <ContactInput placeholder="Subject" name="subject" required/>
           <ContactInputMessage placeholder="Message" rows="4" name="message" required/>
           <ContactButton type="submit" value="Send" />
@@ -182,7 +179,7 @@ const Contact = () => {
         >
           <SnackbarContent
             message="Email sent successfully!"
-            style={{ background: 'linear-gradient(to right, #dd00ff, #8c00ff)' }}
+            style={{ background: 'linear-gradient(to right, #083c91, #4285F4)' }}
           />
         </Snackbar>
       </Wrapper>
