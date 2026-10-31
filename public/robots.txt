@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kavindu-dilshan.github.io/sitemap.xml
