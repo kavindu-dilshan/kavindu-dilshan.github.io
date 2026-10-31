@@ -1,0 +1,65 @@
+.project-details-dialog[open]::backdrop {
+  animation: project-backdrop-in 320ms ease-in-out both;
+}
+.project-details-dialog[open] > .project-details__panel {
+  animation: project-details-in 320ms ease-in-out both;
+}
+.project-details-dialog[data-closing="true"]::backdrop {
+  animation: project-backdrop-out 320ms ease-in-out both;
+}
+.project-details-dialog[data-closing="true"] > .project-details__panel {
+  animation: project-details-out 320ms ease-in-out both;
+  pointer-events: none;
+}
+@keyframes project-details-in {
+  from { opacity: 0; transform: translateY(20px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes project-details-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(20px) scale(.98); }
+}
+@keyframes project-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes project-backdrop-out { from { opacity: 1; } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .project-details-dialog[open] > .project-details__panel,
+  .project-details-dialog[open]::backdrop { animation: none; }
+}
+
+.contact-glow-button.project-details__live {
+  --contact-button-radius: 999px;
+  flex: 1;
+  width: auto;
+  margin-top: 0;
+}
+
+.project-details__frame {
+  margin-bottom: 2rem;
+}
+
+.project-details__cover {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #161622;
+  isolation: isolate;
+}
+
+@media (min-width: 640px) {
+  .project-details__cover {
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+  }
+}
+
+.project-details__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform-origin: center center;
+  will-change: transform;
+}

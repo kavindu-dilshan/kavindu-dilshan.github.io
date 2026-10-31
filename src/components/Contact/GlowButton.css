@@ -1,0 +1,82 @@
+.contact-glow-button {
+  --contact-button-radius: 12px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  min-height: 52px;
+  margin-top: 8px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: var(--contact-button-radius);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none;
+}
+.contact-glow-orbit { position: absolute; inset: -20px; width: calc(100% + 40px); height: calc(100% + 40px); overflow: visible; pointer-events: none; z-index: 1; }
+.contact-glow-trail { width: calc(100% - 44px); height: calc(100% - 44px); rx: calc(var(--contact-button-radius) - 2px); ry: calc(var(--contact-button-radius) - 2px); }
+.contact-glow-surface { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; background: #000; z-index: 5; pointer-events: none; }
+.contact-glow-border { position: absolute; inset: 0; border-radius: inherit; border: 2px solid color-mix(in srgb, var(--color-primary) 35%, transparent); z-index: 1; }
+.contact-glow-pointer { position: absolute; inset: 0; transition: opacity .3s ease; z-index: 2; filter: blur(7.2px); }
+.contact-glow-inset { position: absolute; inset: 1.5px; border-radius: calc(var(--contact-button-radius) - 1.5px); background: #000; z-index: 3; }
+.contact-glow-cloud { position: absolute; width: 98%; height: 210%; left: 0%; top: -55%; border-radius: 50%; background: color-mix(in srgb, var(--color-primary) 66%, transparent); filter: blur(24.8px); z-index: 4; }
+.contact-glow-core { position: absolute; width: 55%; height: 130%; left: 22.5%; top: -15%; border-radius: 50%; background: var(--color-primary); filter: blur(20px); z-index: 4; }
+.contact-glow-shine { position: absolute; width: 50%; height: 2px; left: 25%; top: 0; border-radius: 999px; background: linear-gradient(90deg, transparent, rgba(237,233,254,.95), transparent); filter: blur(1.6px); z-index: 5; }
+.contact-glow-label { position: relative; z-index: 20; display: flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Google Sans', sans-serif; font-weight: 400; font-size: 15px; line-height: 1; text-shadow: 0 0 13.3px rgba(221,214,254,.7); transition: text-shadow .35s ease; pointer-events: none; }
+.contact-glow-button:enabled:hover .contact-glow-label { text-shadow: 0 0 14px rgba(221,214,254,.7); }
+.contact-glow-button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
+.contact-glow-button:disabled { opacity: .6; cursor: not-allowed; }
+@media (min-width: 640px) {
+  .contact-glow-button { --contact-button-radius: 14px; height: 56px; min-height: 56px; }
+  .contact-glow-label { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .contact-glow-button * { transition: none; } }
+
+/* Preserve the Projects button's compact pill dimensions. */
+.contact-glow-button.projects-show-more {
+  --contact-button-radius: 999px;
+  width: auto;
+  height: 46px;
+  min-height: 46px;
+  margin-top: 0;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+}
+.projects-show-more .contact-glow-label {
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.contact-glow-button.projects-category {
+  --contact-button-radius: 999px;
+  width: auto;
+  height: 38px;
+  min-height: 38px;
+  margin-top: 0;
+  padding: 10px 16px;
+  color: white;
+}
+.projects-category .contact-glow-label { font-size: 12px; font-weight: 500; line-height: 16px; text-shadow: none; }
+.projects-category .contact-glow-border { border: 2px solid rgba(255,255,255,.08); }
+.projects-category .contact-glow-cloud { opacity: .15 !important; }
+.projects-category .contact-glow-core { opacity: .08 !important; }
+.projects-category[aria-pressed="true"] { color: white; }
+.projects-category[aria-pressed="true"] .contact-glow-border { border-color: color-mix(in srgb, var(--color-primary) 55%, transparent); }
+.projects-category[aria-pressed="true"] .contact-glow-cloud,
+.projects-category:enabled:hover .contact-glow-cloud { opacity: 1 !important; }
+.projects-category[aria-pressed="true"] .contact-glow-core,
+.projects-category:enabled:hover .contact-glow-core { opacity: .28 !important; }
+.projects-category:enabled:hover:not([aria-pressed="true"]) { color: #9ca3af; }
+@media (min-width: 640px) {
+  .contact-glow-button.projects-category { height: 42px; min-height: 42px; padding-inline: 20px; }
+  .projects-category .contact-glow-label { font-size: 14px; line-height: 20px; }
+}

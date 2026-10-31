@@ -1,0 +1,58 @@
+.focus-gallery { padding: 0 0 40px; background: #0e0e14; }
+.focus-gallery__heading { max-width: 1100px; margin: 0 auto 20px; padding: 0 32px; display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; }
+.focus-gallery__eyebrow { color: #b99bea; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 16px; }
+.focus-gallery h2 { font-size: clamp(28px, 4vw, 50px); font-weight: 700; line-height: 1.12; letter-spacing: -.035em; }
+.focus-gallery h2 span { color: primary; }
+.focus-gallery__description { max-width: 520px; color: #9ca3af; font-size: 14px; line-height: 1.8; margin-top: 18px; }
+@media (min-width: 640px) {
+  .focus-gallery__description { font-size: 15px; }
+}
+@media (min-width: 768px) {
+  .focus-gallery__description { font-size: 16px; }
+}
+.focus-gallery__viewport:focus-visible { outline: 2px solid #b88af4; outline-offset: 5px; }
+.focus-gallery__viewport { position: relative; isolation: isolate; overflow: hidden; padding: 48px 0; cursor: grab; touch-action: pan-y; user-select: none; }
+.focus-gallery__viewport::before,
+.focus-gallery__viewport::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(40px, 7vw, 120px);
+  z-index: 2;
+  pointer-events: none;
+  --edge-direction: to right;
+  background: linear-gradient(var(--edge-direction), #0e0e1426, #0e0e1400);
+  -webkit-backdrop-filter: blur(14px) saturate(1.25);
+  backdrop-filter: blur(14px) saturate(1.25);
+  /* Feather both axes so the blur halo never ends at a rectangular boundary. */
+  -webkit-mask-image: linear-gradient(var(--edge-direction), #000 0%, #000e 22%, #0007 55%, transparent 100%), linear-gradient(to bottom, transparent, #000 64px, #000 calc(100% - 64px), transparent);
+  mask-image: linear-gradient(var(--edge-direction), #000 0%, #000e 22%, #0007 55%, transparent 100%), linear-gradient(to bottom, transparent, #000 64px, #000 calc(100% - 64px), transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.focus-gallery__viewport::before { left: 0; }
+.focus-gallery__viewport::after {
+  right: 0;
+  --edge-direction: to left;
+}
+.focus-gallery__viewport:active { cursor: grabbing; }
+.focus-gallery__track, .focus-gallery__group { display: flex; width: max-content; }
+.focus-gallery__track { will-change: transform; }
+.focus-gallery__group { gap: 8px; padding-right: 8px; }
+.focus-gallery__artwork { position: relative; width: clamp(200px, 23vw, 320px); aspect-ratio: 1 / 1; flex-shrink: 0; overflow: hidden; border-radius: 4px; background: #19151f; transition: transform .5s, opacity .5s, filter .5s; }
+.focus-gallery__artwork img { width: 100%; height: 100%; object-fit: cover; user-select: none; transition: transform .65s; }
+@media (hover: hover) {
+  .focus-gallery__viewport:not([data-dragging="true"]) .focus-gallery__track:has(.focus-gallery__artwork:hover) .focus-gallery__artwork:not(:hover) { opacity: .5; filter: blur(2px); transform: scale(.97); }
+  .focus-gallery__viewport:not([data-dragging="true"]) .focus-gallery__artwork:hover { transform: scale(1.025); z-index: 1; }
+  .focus-gallery__viewport:not([data-dragging="true"]) .focus-gallery__artwork:hover img { transform: scale(1.04); }
+}
+@media (max-width: 640px) {
+  .focus-gallery { padding-bottom: 16px; }
+  .focus-gallery__heading { padding: 0 20px; flex-direction: column; align-items: flex-start; gap: 22px; margin-bottom: 0px; }
+  .focus-gallery__group { gap: 6px; padding-right: 6px; }
+  .focus-gallery__artwork { width: min(62vw, 280px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .focus-gallery__artwork, .focus-gallery__artwork img { transition: none; }
+}

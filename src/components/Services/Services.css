@@ -1,58 +1,144 @@
-  .services-section {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    gap: 30px;
-    justify-content: center;
-  }
-  
-  .service {
-    width: 100%;
-    max-width: 250px;
-    border: 0.1px solid #4285F4;
-    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 30px 20px;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
+.brands-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
 
-    @media (max-width: 768px) {
-        max-width: 400px;
-        padding: 30px 36px;
-    }
+.brands-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: brands-scroll 28s linear infinite;
+}
 
-    @media (max-width: 500px) {
-        max-width: 300px;
-        padding: 30px 36px;
-    }
+.brands-marquee__group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 52px;
+  padding-right: 52px;
+}
 
-    &:hover {
-      box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
-      transform: scale(1.05);
-      cursor: pointer;
-    }
+@keyframes brands-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brands-marquee__track {
+    animation: none;
   }
-  
-  .service-icon {
-    color: #4285F4;
-    font-size: 2em;
-    margin-bottom: 10px;
+}
+
+.services-section {
+  background: #0e0e14;
+  scroll-margin-top: 90px;
+}
+
+.services-panels {
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 0 0 90px 90px;
+  overflow: hidden;
+}
+
+.services-list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 24px;
+  row-gap: 32px;
+  margin: 0;
+  padding: 40px max(24px, calc((100% - var(--content-width)) / 2)) 80px;
+  background: #0e0e14;
+  border-radius: 0 0 90px 90px;
+}
+
+.services-list > li {
+  justify-self: center;
+  width: max-content;
+  max-width: 100%;
+}
+
+.service-number {
+  display: block;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.service-title {
+  margin-top: 3px;
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+}
+
+.brands-panel {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: calc(100% - 48px);
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-block: 56px;
+}
+
+.brands-label {
+  flex-shrink: 0;
+  width: 210px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.brand-logo img.brand-logo--smaller {
+  transform: scale(0.8);
+}
+
+.brand-logo img {
+  display: block;
+  width: 160px;
+  height: 56px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .brands-marquee__group {
+    gap: 52px;
+    padding-right: 52px;
   }
-  
-  .service-title {
-    color: #F2F3F4;
-    font-size: 18px;
-    margin-bottom: 10px;
+}
+
+@media (max-width: 1023px) {
+  .services-list { gap: 24px; padding-bottom: 64px; }
+  .service-number { font-size: 32px; }
+  .service-title { font-size: 18px; }
+  .brands-panel { gap: 28px; padding-block: 44px; }
+  .brands-label { width: 190px; font-size: 15px; }
+}
+
+@media (max-width: 767px) {
+  .services-panels, .services-list { border-radius: 0 0 40px 40px; }
+  .services-list {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    justify-items: start;
+    gap: 32px 16px;
+    padding: 32px max(clamp(16px, 5vw, 24px), calc((100% - 380px) / 2)) 48px;
   }
-  
-  .service-description {
-    line-height: 1.5;
-    font-size: 15px;
-    color: #B1B2B3;
-    @media screen and (max-width: 768px) {
-      font-size: 14px; 
-    }
+  .services-list > li {
+    justify-self: start;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
   }
-  
+  .service-number { font-size: clamp(28px, 8vw, 32px); }
+  .service-title { font-size: clamp(15px, 4.6vw, 18px); }
+  .brands-panel { flex-direction: column; align-items: stretch; gap: 24px; padding-block: 32px 40px; }
+  .brands-label { width: auto; }
+  .brand-logo img { width: 140px; height: 48px; }
+}

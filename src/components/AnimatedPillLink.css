@@ -1,0 +1,81 @@
+.animated-pill {
+  --button-inset: 4px;
+  --icon-size: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  isolation: isolate;
+  height: 48px;
+  padding: var(--button-inset) var(--button-inset) var(--button-inset) 20px;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.animated-pill__fill {
+  position: absolute;
+  z-index: -1;
+  inset: var(--button-inset) var(--button-inset) var(--button-inset) auto;
+  width: var(--icon-size);
+  border-radius: 999px;
+  background: #000;
+  transition: width 500ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.animated-pill__label {
+  transition: color 250ms ease;
+}
+
+.animated-pill__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  overflow: hidden;
+  color: #fff;
+}
+
+.animated-pill__arrow {
+  position: absolute;
+  transition: transform 500ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.animated-pill__arrow--incoming {
+  transform: translateX(-38px);
+}
+
+.animated-pill:is(:hover, :focus-visible, :active) .animated-pill__fill {
+  width: calc(100% - 2 * var(--button-inset));
+}
+
+.animated-pill:is(:hover, :focus-visible, :active) .animated-pill__label {
+  color: #fff;
+}
+
+.animated-pill:is(:hover, :focus-visible, :active) .animated-pill__arrow {
+  transform: translateX(38px);
+}
+
+.animated-pill:is(:hover, :focus-visible, :active) .animated-pill__arrow--incoming {
+  transform: translateX(0);
+}
+
+.animated-pill:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-pill__fill,
+  .animated-pill__label,
+  .animated-pill__arrow {
+    transition: none;
+  }
+}

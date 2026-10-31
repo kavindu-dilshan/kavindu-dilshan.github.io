@@ -1,0 +1,88 @@
+.project-message {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  width: 360px;
+  max-width: calc(100vw - 48px);
+  padding: 16px;
+  border: 2px solid rgb(255 255 255 / 5%);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 4%);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+.project-message__content { width: 100%; }
+.project-message__header { display: flex; align-items: center; gap: 12px; padding-right: 28px; margin-bottom: 20px; }
+.project-message__avatar { position: relative; flex-shrink: 0; width: 48px; height: 48px; }
+.project-message__avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.project-message__online-dot { position: absolute; right: 0; bottom: 0; width: 14px; height: 14px; border-radius: 50%; background: #25c765; }
+.project-message__online-dot::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: inherit; animation: project-message-online 2s ease-out infinite; }
+.project-message__intro { min-width: 0; }
+.project-message__status { margin-top: 6px; color: #c8c7cc; font-size: 12px; line-height: 1.5; }
+.project-message__status span { color: #25c765; }
+@keyframes project-message-online {
+  0% { transform: scale(1); opacity: .6; }
+  100% { transform: scale(2); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-message__online-dot::after { animation: none; }
+}
+
+.project-message__content h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.project-message__actions { display: flex; gap: 8px; }
+.project-message__talk { flex: 1; }
+.project-message__whatsapp { flex: 1.6; }
+
+.project-message__actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: filter 160ms ease;
+}
+
+.project-message__talk { background: #fff; color: #101019; }
+.project-message__whatsapp { background: #25c765; color: #fff; }
+.project-message__actions a:hover { filter: brightness(0.9); }
+
+.project-message__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff1a;
+  color: #c8c7cc;
+  cursor: pointer;
+}
+
+.project-message__close:hover { background: #ffffff30; }
+.project-message :is(a, button):focus-visible { outline: 2px solid #c4a5ff; outline-offset: 4px; }
+
+@media (max-width: 768px) {
+  .project-message {
+    display: none !important;
+  }
+}

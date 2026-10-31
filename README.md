@@ -40,11 +40,17 @@ To run this portfolio locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/kavindu-dilshan/kavindu-dilshan.github.io.git`
 2. Navigate to the project directory: `cd kavindu-dilshan.github.io`
 3. Install the dependencies: `npm install`
-4. Start the development server: `npm start`
-5. Open your browser and visit: `http://localhost:3000`
+4. Start the development server: `npm run dev`
+5. Open your browser and visit: `http://localhost:5173`
 
 ## Deployment
-The application is deployed on the GitHub pages. Visit [here](https://kavindu-dilshan.github.io) to access the live application.
+GitHub Actions builds and deploys this Vite site on every push to `main`. Pull requests run the build without deploying.
+
+One-time setup: in repository Settings → Pages → Build and deployment, select **GitHub Actions** as the source. Push the source files and package-lock.json; do not commit dist or node_modules. The workflow uses Node.js 22 and publishes dist to https://kavindu-dilshan.github.io/.
+
+Before pushing, run `npm ci` and `npm run build`. The older `npm run deploy` script is a separate manual gh-pages branch deployment; use the Actions workflow for automatic deployment.
+
+EmailJS: reconnect the Gmail service in the EmailJS dashboard if authorization fails. Keep private credentials out of source control; Vite client environment variables are public in the browser. Confirm contact delivery and test mobile navigation on an iPhone after deployment.
 
 ## License
 This project is licensed under the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
