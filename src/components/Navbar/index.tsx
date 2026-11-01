@@ -153,7 +153,7 @@ const Navbar = () => {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div id="mobile-navigation" data-lenis-prevent initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduceMotion ? 0 : 0.35, ease: 'easeInOut' }} className="mobile-navigation pointer-events-auto xl:hidden">
+          <motion.div id="mobile-navigation" style={{ backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)' }} data-lenis-prevent initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduceMotion ? 0 : 0.35, ease: 'easeInOut' }} className="mobile-navigation pointer-events-auto xl:hidden">
             <motion.div className="mobile-navigation__content" initial="hidden" animate="visible" exit="hidden" variants={{ hidden: {}, visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.045 } } }}>
               <ul className="mobile-navigation__links">
                 {navItems.map((item, index) => (
