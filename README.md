@@ -1,56 +1,115 @@
-# My Portfolio
-<p><a href="https://github.com/kavindu-dilshan"><img src="https://skillicons.dev/icons?i=react,js,html,css,firebase,vscode,github" width=350></a></p>
+<div align="center">
 
-Welcome to my portfolio! This portfolio shows my skills, projects, and experiences as a web developer.
+# Kavindu Dilshan
 
-### Live App: [kavindu-dilshan.github.io](https://kavindu-dilshan.github.io)<br><br>
+### Full Stack Developer · UI/UX Designer · Creative Designer
 
-<img src="https://firebasestorage.googleapis.com/v0/b/images-for-projects.appspot.com/o/Portfolio%2FHome.jpg?alt=media&token=e35f6f39-1d89-4d15-a1d7-40056e77e622" alt="Home">
+A personal portfolio bringing web development, mobile apps, and visual design together.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Deployment](#deployment)
-- [License](#license)
+[![Live Portfolio](https://img.shields.io/badge/Explore_Portfolio-8B5CF6?style=for-the-badge&logo=googlechrome&logoColor=white)](https://kavindu-dilshan.github.io/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge)](https://www.linkedin.com/in/kavindudilshan84/)
+[![Behance](https://img.shields.io/badge/Behance-1769FF?style=for-the-badge&logo=behance&logoColor=white)](https://www.behance.net/kavindu-dilshan)
 
-## Introduction
-My Portfolio is a React application that serves as an online portfolio to showcase my work, skills, and achievements. It provides an overview of my background, displays my projects, and offers a way to contact me.
+[![Deploy portfolio](https://github.com/kavindu-dilshan/kavindu-dilshan.github.io/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/kavindu-dilshan/kavindu-dilshan.github.io/actions/workflows/deploy-pages.yml)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 
-## Features
-- **About Me:** An overview of my background, skills, and experiences.
-- **Resume:** Link to download my resume.
-- **Services:** Collection of my diverse range of services.
-- **Skills:** List of my coding skills and others.
-- **Experience:** My work experience at different companies and projects.
-- **Projects:** Collection of my projects with descriptions, screenshots, and links.
-- **Education:** My journey and achievements in education.
-- **Contact:** A form to send me messages or inquiries.
+[Explore the site](https://kavindu-dilshan.github.io/) · [Highlights](#highlights) · [Run locally](#run-locally) · [Customize](#customize)
 
-## Tech Stack
-- **React.js:** A JavaScript library for building user interfaces.
-- **HTML5 & CSS3:** Markup and styling languages for building web pages.
-- **JavaScript:** A programming language for adding interactivity to web applications.
-- **Style-Components:** A CSS framework for creating responsive and mobile-first designs.
+</div>
 
-## Installation
-To run this portfolio locally, follow these steps:
+---
 
-1. Clone the repository: `git clone https://github.com/kavindu-dilshan/kavindu-dilshan.github.io.git`
-2. Navigate to the project directory: `cd kavindu-dilshan.github.io`
-3. Install the dependencies: `npm install`
-4. Start the development server: `npm run dev`
-5. Open your browser and visit: `http://localhost:5173`
+## About
 
-## Deployment
-GitHub Actions builds and deploys this Vite site on every push to `main`. Pull requests run the build without deploying.
+This is the source code for my personal portfolio, built with React, TypeScript, and Vite. It showcases my development projects, design services, skills, experience, and education through a dark interface with animated interactions.
 
-One-time setup: in repository Settings → Pages → Build and deployment, select **GitHub Actions** as the source. Push the source files and package-lock.json; do not commit dist or node_modules. The workflow uses Node.js 22 and publishes dist to https://kavindu-dilshan.github.io/.
+The portfolio covers full stack web development, Android development, UI/UX design, and graphic design, with links to project repositories and ways to get in touch.
 
-Before pushing, run `npm ci` and `npm run build`. The older `npm run deploy` script is a separate manual gh-pages branch deployment; use the Actions workflow for automatic deployment.
+## Built with
 
-EmailJS: reconnect the Gmail service in the EmailJS dashboard if authorization fails. Keep private credentials out of source control; Vite client environment variables are public in the browser. Confirm contact delivery and test mobile navigation on an iPhone after deployment.
+| Area | Tools |
+| --- | --- |
+| Interface | React 18, TypeScript |
+| Build | Vite 8 |
+| Styling | Tailwind CSS 4, custom CSS |
+| Animation | Framer Motion, Lenis |
+| Visuals & icons | Paper Design Shaders, Lucide, React Icons |
+| Forms & email | React Hook Form, EmailJS |
+| Hosting | GitHub Pages, GitHub Actions |
 
-## License
-This project is licensed under the [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
+## Featured projects
+
+| Project | Focus | Technologies |
+| --- | --- | --- |
+| [CeyGo](https://github.com/kavindu-dilshan/CeyGo) | Sri Lanka travel companion | Kotlin, Android Studio, Google Maps |
+| [Serendib Estates](https://github.com/kavindu-dilshan/serendib-estates) | Real estate marketplace | React, Node.js, Express, MongoDB, Redux |
+| [Medali](https://github.com/kavindu-dilshan/Medali) | Medication tracking and reminders | Swift, Core Data, HealthKit |
+| [KMP Pharmacy](https://github.com/kavindu-dilshan/KMP-Pharmacy) | Pharmacy management | MongoDB, Express, React, Node.js |
+
+More projects and team credits are available in the portfolio.
+
+## Run locally
+
+Use **Node.js 22.12 or newer** and npm. The deployment workflow uses Node.js 22.
+
+```bash
+git clone https://github.com/kavindu-dilshan/kavindu-dilshan.github.io.git
+cd kavindu-dilshan.github.io
+npm ci
+npm run dev
+```
+
+Open the local URL printed by Vite, usually `http://localhost:5173`.
+
+### Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+The build checks TypeScript, bundles the app, and generates static project pages plus `sitemap.xml` in `dist/`. Use the preview server to check those pages before deployment.
+
+## Customize
+
+| What to change | Where to edit |
+| --- | --- |
+| Name, introduction, social profiles, résumé | `src/data/personal.ts` |
+| Project descriptions, technologies, links, team credits | `src/data/projects.ts` |
+| Skills | `src/data/skills.ts` |
+| Sections and interactions | `src/components/` |
+| Project screenshots and design assets | `src/images/` |
+| Homepage title and search metadata | `index.html` |
+| Static project page layout and sitemap generation | `scripts/build-project-pages.mjs` |
+| Deployment workflow | `.github/workflows/deploy-pages.yml` |
+
+Project pages are generated from the same data as the portfolio. Edit the source files and rebuild; changes made directly inside `dist/` will be overwritten.
+
+### Contact form
+
+To use the contact form in your own fork, configure an EmailJS service and template, then update the EmailJS configuration in `src/components/Contact/index.tsx`. Match the template fields to the form before testing delivery.
+
+Browser-side configuration is visible to visitors. Keep private credentials out of client code and Git history.
+
+## Deploy
+
+1. In the repository, open **Settings → Pages → Build and deployment**.
+2. Select **GitHub Actions** as the source.
+3. Push your changes to `main`.
+
+The workflow installs dependencies, builds the site, and publishes `dist/`. Pull requests run the build without deploying. Generated output and `node_modules/` are excluded from version control.
+
+For a fork or a different domain, update the site URLs in `index.html`, `public/robots.txt`, `public/sitemap.xml`, `package.json`, and `scripts/build-project-pages.mjs`. A repository hosted under a subpath also needs the appropriate Vite base path and asset/link configuration.
+
+## Connect
+
+Interested in a website, app, or design collaboration?
+
+[Portfolio](https://kavindu-dilshan.github.io/) · [LinkedIn](https://www.linkedin.com/in/kavindudilshan84/) · [Behance](https://www.behance.net/kavindu-dilshan) · [Email](mailto:kavindudilshan84@gmail.com)
+
+## Usage & licensing
+
+This repository currently has no `LICENSE` file. Contact me about permission to reuse the code, personal branding, photographs, or design assets. Project and brand references retain their respective ownership.
+

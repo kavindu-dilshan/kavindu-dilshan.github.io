@@ -24,9 +24,9 @@ const HeroSection = () => {
             <motion.img style={{ scale: reduceMotion ? 1 : imageScale }} src={BackgroundImg} alt="Background Atmosphere" className="hero-background absolute inset-0 w-full h-full object-cover object-[center_25%] md:object-[center_15%] pointer-events-none select-none z-0" />
             {/* Layer 2: Vignette & Ambient Glow Overlays */}
             <div className="hero-shade absolute inset-0 bg-gradient-to-r from-[#0e0e14]/85 via-[#0e0e14]/30 to-transparent z-[1] pointer-events-none" />
-            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0e0e14]/80 to-transparent z-[1] pointer-events-none" />
-            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[1]" />
-            <div className="absolute top-1/3 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[1]" />
+            <div className="hidden md:block absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0e0e14]/80 to-transparent z-[1] pointer-events-none" />
+            <div className="hidden md:block absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[1]" />
+            <div className="hidden md:block absolute top-1/3 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none z-[1]" />
             <AvailabilityMarquee />
             {/* Layer 4: Foreground Subject */}
             <motion.img style={{ scale: reduceMotion ? 1 : imageScale }} src={MaskedImg} alt="Kavindu Dilshan" className="hero-portrait absolute inset-0 w-full h-full object-cover object-[center_25%] md:object-[center_15%] pointer-events-none select-none z-[3]" />

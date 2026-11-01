@@ -81,7 +81,7 @@
   .hero-content {
     width: calc(100% - 40px);
     height: auto;
-    padding-top: clamp(330px, 86vw, 470px);
+    padding-top: clamp(380px, 96vw, 520px);
     padding-bottom: 0;
     flex-grow: 0;
     order: 1;
@@ -92,14 +92,14 @@
 
   .hero-greeting {
     font-size: clamp(38px, 9.5vw, 52px);
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     transform-origin: center;
   }
 
   .hero-name {
     font-size: clamp(38px, 12vw, 56px);
     line-height: 0.95;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
     white-space: nowrap;
   }
 
@@ -112,13 +112,13 @@
     font-size: 13px;
     line-height: 1.6;
     text-align: center;
-    margin-bottom: 22px;
+    margin-bottom: 14px;
   }
 
   .hero-actions {
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 16px;
+    gap: 10px;
   }
 
   .hero-socials { gap: 6px; }

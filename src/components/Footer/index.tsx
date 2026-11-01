@@ -83,7 +83,12 @@ function Footer() {
         </div>
         <div className="flex flex-row items-center justify-between gap-5 border-t border-white/[0.06] pt-6 sm:pt-4">
           <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} {Bio.name}.</p>
-          <button type="button" onClick={scrollToTop} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.03] text-xs text-gray-300 hover:bg-white/[0.07] transition-colors transition-all duration-300">Back to top <ArrowUp size={14} className="text-primary" /></button>
+          <button type="button" onClick={scrollToTop} className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-white/10 p-1 pl-4 text-xs font-normal text-gray-400 transition-colors duration-300 hover:bg-white/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#0e0e14]">
+            Back to top
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#0e0e14]" aria-hidden="true">
+              <ArrowUp size={19} strokeWidth={2.5} className="transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
+            </span>
+          </button>
         </div>
       </div>
       <div aria-hidden="true" className="h-[15vw] overflow-hidden mt-8 sm:mt-0 flex justify-center pointer-events-none select-none">

@@ -66,7 +66,7 @@ const Skills = () => {
       <div className="relative z-10 w-full max-w-[1100px] mx-auto px-5 sm:px-6 md:px-8">
 
         {/* ── Two-column Layout: Intro (left) + Panel (right) ── */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-10 xl:gap-14">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-10 lg:gap-10 xl:gap-14">
 
           {/* ═══ LEFT: Introduction ═══ */}
           <motion.div
@@ -94,7 +94,7 @@ const Skills = () => {
             {/* Supporting Copy */}
             <motion.p
               variants={fadeUpVariants}
-              className="text-[14px] sm:text-[15px] md:text-base leading-relaxed text-gray-400 max-w-sm mb-10 sm:mb-12"
+              className="text-[14px] sm:text-[15px] md:text-base leading-relaxed text-gray-400 max-w-sm mb-0 sm:mb-12"
             >
               My toolkit for designing, developing and delivering digital experiences.
             </motion.p>
